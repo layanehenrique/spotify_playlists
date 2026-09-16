@@ -119,7 +119,7 @@ Isso permitiria uma análise de "antes x depois" para isolar causalidade entre c
 │   └── track_in_competition_ativa_BR.csv
 ├── docs/
 │   ├── ficha_tecnica.docx
-│   └── roteiro_apresentacao.pptx
+│   └── apresentacao.pptx
 ├── dashboard/
 │   └── link_looker_studio.md
 └── README.md
