@@ -1,0 +1,20 @@
+Valores nulos,,,,,Valores duplicados ,,,,,Valores atípicos em variáveis categóricas,,,,,Valores atípicos em variáveis numéricas,,,,,,,,,,,,,,,
+Coluna,Fórmula,Valores,Decisão,,Coluna,Fórmula,Valores ,Decisão,,Coluna,Fórmula,Valores ,Decisão,,Coluna,Fórmula,Valores ,Decisão,,released_year,released_month,released_day,in_spotify_playlists,in_spotify_charts,streams,in_apple_playlists,in_apple_charts,in_deezer_playlists,in_deezer_charts ,in_shazam_charts
+track_id,COUNTBLANK,0,,,track_id,CONT.SE e COUNTIF,8 linhas com 2 repetições,"Duplicação de registros. Dessa forma, deletei as duplicatas.",,track_name,UNIQUE / CONT.SE / Formatação condicional,Dados normais,Manter,,released_year,"max, min, med /  IF / ISNUMBER",Dados normais,,max,2023,12,31,"52,898.00",147.00,"3,703,895,074.00",672.00,275.00,"12,367.00",58.00,"1,451.00"
+track_name,COUNTBLANK,0,,,track_name,CONT.SE e COUNTIF,10 duplicatas,"Duplicatas com track_id diferente, portanto, foram mantidas duvido a especificidade do nicho.",,artists_name,UNIQUE / CONT.SE / Formatação condicional,Dados normais,Manter,,released_month,"max, min, med /  IF / ISNUMBER",Dados normais,,min,1942,1,1,31.00,0.00,-1.00,0.00,0.00,0.00,0.00,0.00
+artists_name,COUNTBLANK,0,,,,,,,,main_music_genre,UNIQUE / CONT.SE / Formatação condicional,disco-pop / disco pop,Substituí disco-pop por disco pop,,released_day,"max, min, med /  IF / ISNUMBER",Dados normais,,med,2018,6,14,"5,542.61",12.48,"535,964,741.27",69.69,53.43,420.88,2.64,64.68
+artist_count,COUNTBLANK,0,,,,,,,,main_country,UNIQUE / CONT.SE / Formatação condicional,Puerto Rico / PR; Mexico / MX; United States / USA,Substituí as abreviações pelos nomes inteiros,,in_spotify_playlists,"max, min, med /  IF / ISNUMBER",1 dado fora do padrão (corrompido),"Linha inválida, removi da análise",,,,,,,,,,,,
+main_music_genre,COUNTBLANK,1,Inferi o valor pelo track_name/artists_name e preenchi manualmente.,,,,,,,,,,,,in_spotify_charts,"max, min, med /  IF / ISNUMBER",,,,,,,,,,,,,,
+main_country,COUNTBLANK,1,Inferi o valor pelo track_name/artists_name e preenchi manualmente.,,,,,,,,,,,,streams,"max, min, med /  IF / ISNUMBER",-1 (atípico),"Era a mesma linha de in_spotify_playlist, linha removida",,,,Correlação entre playlist do spotify e streams,Resultado,,,Correlação entre presença no shazam e no spotify,Resultado,,,
+released_year,COUNTBLANK,0,,,,,,,,,,,,,track_id,"max, min, med /  IF / ISNUMBER",,,,,,0.7882063298,Próximo de 1 → forte correlação positiva,,,0.6094492227,Correlação moderada,,,
+released_month,COUNTBLANK,0,,,,,,,,,,,,,in_apple_playlists,"max, min, med /  IF / ISNUMBER",,,,,,,,,,,,,,
+released_day,COUNTBLANK,0,,,,,,,,,,,,,in_apple_charts,"max, min, med /  IF / ISNUMBER",,,,,,Mediana_0-5000,Mediana_5001-15000,Mediana_15001+,,,,,,
+in_spotify_playlists,COUNTBLANK,0,,,,,,,,,,,,,in_deezer_playlists,"max, min, med /  IF / ISNUMBER",,,,,,"199,134,620.50","830,376,223.50","1,692,952,473.50",,,,,,
+in_spotify_charts,COUNTBLANK,4,"Tratados como dado ausente, não preenchidos com 0. Mantive as células vazias para não a planilha não interpretar como coluna de texto misto (em vez de numérica)  e não quebrar cálculos, fórmulas e gráficos.",,,,,,,,,,,,in_deezer_charts,"max, min, med /  IF / ISNUMBER",,,,,,,,,,,,,,
+streams,COUNTBLANK,0,,,,,,,,,,,,,in_shazam_charts,"max, min, med /  IF / ISNUMBER",,,,,,,,,,,,,,
+track_id,COUNTBLANK,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+in_apple_playlists,COUNTBLANK,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+in_apple_charts,COUNTBLANK,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+in_deezer_playlists,COUNTBLANK,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+in_deezer_charts,COUNTBLANK,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+in_shazam_charts,COUNTBLANK,50,"Tratados como dado ausente, não preenchidos com 0. Indicado avaliar o erro na coleta dos dados com o time de engenharia de dados.",,,,,,,,,,,,,,,,,,,,,,,,,,,
