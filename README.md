@@ -71,7 +71,7 @@ Priorizadas pela VP de Produto:
 
 ---
 
-## 🔎 Principais resultados
+## Principais resultados
 
 | Pergunta | Resultado |
 |---|---|
